@@ -147,10 +147,20 @@ const filterHtml = document.getElementById('element-type');
     })
     console.log(listUser)
     // nuovo array di user
+
+    const cleanList = [
+        icons,
+        listAnimal,
+        listVegetable,
+        listUser
+    ];
+    console.log(cleanList);
+
         
 
     filterHtml.addEventListener('change', function(){
-        icons.forEach(element => {
+        containerHtml.innerHTML = '';
+        cleanList.forEach(element => {
             containerHtml.innerHTML +=
              `
             <div class="box"> 
