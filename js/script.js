@@ -133,12 +133,6 @@ function createBox (container, list) {
 
 const containerHtml = document.querySelector('.container');
 const filterHtml = document.getElementById('element-type');
-const selectAll = document.getElementById('all');
-const selectAnimal = document.getElementById('animal');
-const selectVegetable = document.getElementById('vegetable');
-const selectUser = document.getElementById('user');
-
-
 
 
     const listAnimal = icons.filter(function (element){
@@ -170,6 +164,7 @@ const selectUser = document.getElementById('user');
     console.log(listUser)
     // nuovo array di user
 
+	// creo un array che contiene gli array appena creati
     const cleanList = [
         icons,
         listAnimal,
@@ -178,14 +173,11 @@ const selectUser = document.getElementById('user');
     ];
     console.log(cleanList);
 
-        
-        
-        
-filterHtml.addEventListener('change', function(){
-        containerHtml.innerHTML = '';
-        const valore = filterHtml.value
-        createBox(containerHtml, cleanList[valore])
-        })
+	filterHtml.addEventListener('change', function(){
+		containerHtml.innerHTML = '';
+        const position = filterHtml.value
+        createBox(containerHtml, cleanList[position])
+	})
     
 
      
