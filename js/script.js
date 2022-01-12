@@ -112,9 +112,31 @@ const icons = [
 		color: 'blue'
 	}
 ];
+// ------------------------------------------
+
+// funzione
+
+function createBox (container, list) {
+    list.forEach((element) => {
+        container.innerHTML +=
+         `
+        <div class="box"> 
+            <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+            <p>${element.name}</p>
+        </div>
+        `;
+          
+    });
+}
+
+// ----------------------------------------------------
 
 const containerHtml = document.querySelector('.container');
 const filterHtml = document.getElementById('element-type');
+const selectAll = document.getElementById('all');
+const selectAnimal = document.getElementById('animal');
+const selectVegetable = document.getElementById('vegetable');
+const selectUser = document.getElementById('user');
 
 
 
@@ -157,25 +179,14 @@ const filterHtml = document.getElementById('element-type');
     console.log(cleanList);
 
         
-
-    filterHtml.addEventListener('change', function(){
+        
+        
+filterHtml.addEventListener('change', function(){
         containerHtml.innerHTML = '';
-        icons.forEach(element => {
-            containerHtml.innerHTML +=
-             `
-            <div class="box"> 
-                <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
-                <p>${element.name}</p>
-            </div>
-            `;
-              
-        });
+        const valore = filterHtml.value
+        createBox(containerHtml, cleanList[valore])
+        })
+    
 
-    })
-        
-        
-
-
-
-
+     
 
