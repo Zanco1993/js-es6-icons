@@ -114,6 +114,9 @@ const icons = [
 ];
 
 const containerHtml = document.querySelector('.container');
+const filterHtml = document.getElementById('element-type');
+
+
 
 icons.forEach(element => {
     containerHtml.innerHTML +=
@@ -123,7 +126,23 @@ icons.forEach(element => {
         <p>${element.name}</p>
     </div>
     `;
+
+    
 });
+
+    filterHtml.addEventListener('change', function)
+    const listAnimal = icons.filter(function (user){
+        const UserType = user.type;
+        if(UserType === "animal") {
+            return true      
+        }
+        
+    })
+    console.log(listAnimal)
+        
+        
+        
+
 
 
 
