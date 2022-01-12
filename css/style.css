@@ -8,6 +8,8 @@
     height: 100px;
     width: 100px;
     border: 1px solid black;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .fas.blue {

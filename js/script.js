@@ -120,6 +120,7 @@ icons.forEach(element => {
      `
     <div class="box"> 
         <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+        <p>${element.name}</p>
     </div>
     `;
 });
