@@ -160,7 +160,7 @@ const filterHtml = document.getElementById('element-type');
 
     filterHtml.addEventListener('change', function(){
         containerHtml.innerHTML = '';
-        cleanList.forEach(element => {
+        icons.forEach(element => {
             containerHtml.innerHTML +=
              `
             <div class="box"> 
