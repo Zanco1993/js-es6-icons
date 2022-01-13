@@ -173,9 +173,20 @@ const filterHtml = document.getElementById('element-type');
     ];
     console.log(cleanList);
 
-	filterHtml.addEventListener('change', function(){
+	// 1° metodo
+
+	// filterHtml.addEventListener('change', function(){
+	// 	containerHtml.innerHTML = '';
+    //     const position = filterHtml.value
+    //     createBox(containerHtml, cleanList[position])
+	// })
+
+	// 2° metodo
+
+	filterHtml.addEventListener('change', function(event){
 		containerHtml.innerHTML = '';
-        const position = filterHtml.value
+        const position = event.target.value
+		console.log(position)
         createBox(containerHtml, cleanList[position])
 	})
     
