@@ -129,6 +129,21 @@ function createBox (container, list) {
     });
 }
 
+// funzione per il terzo metodo
+function createNewBox (container, list) {
+	containerHtml.innerHTML = "";
+    list.forEach((element) => {
+        container.innerHTML +=
+         `
+        <div class="box"> 
+            <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+            <p>${element.name}</p>
+        </div>
+        `;
+          
+    });
+}
+
 // ----------------------------------------------------
 
 const containerHtml = document.querySelector('.container');
@@ -183,11 +198,29 @@ const filterHtml = document.getElementById('element-type');
 
 	// 2° metodo
 
-	filterHtml.addEventListener('change', function(event){
-		containerHtml.innerHTML = '';
-        const position = event.target.value
-		console.log(position)
-        createBox(containerHtml, cleanList[position])
+	// filterHtml.addEventListener('change', function(event){
+	// 	containerHtml.innerHTML = '';
+    //     const position = event.target.value
+	// 	console.log(position)
+    //     createBox(containerHtml, cleanList[position])
+	// })
+
+	// 3° metodo
+
+	filterHtml.addEventListener('change', function(){
+
+		// assegno ad una variabile generica type
+		// e creo un array con il filter
+
+		// arrow function serve per far prendere il this alla 
+		// funzione precedente, cioè filterHtml
+		const filterList = icons.filter((icon) => {
+			return this.value === "all" || this.value === icon.type
+		})
+		console.log(filterList)
+
+		createNewBox(containerHtml, filterList)
+
 	})
     
 
